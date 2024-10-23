@@ -1,0 +1,27 @@
+{% extends 'base_layout.html' %}
+
+{% block title %} Ajouter un film {% endblock %}
+
+{% block content %}
+
+    <h1>Ajouter un film</h1>
+    <form method="POST">
+        {{ form.hidden_tag()}}
+
+        <p>
+            {{form.title.label}}<br>
+            {{form.title}}
+        </p>
+        <p>
+            {{form.description.label}}<br>
+            {{form.description}}
+        </p>
+        <p>
+            {{form.release_date.label}}<br>
+            {{form.release_date}} 
+        </p>
+        <button type="submit">Ajouter</button>
+    </form>
+
+
+{% endblock %}
