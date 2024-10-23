@@ -1,0 +1,36 @@
+
+{% extends 'base_layout.html' %}
+
+{% block title %} Home {% endblock %}
+
+{% block content %}
+    {% set message_fin = 'Merci de suivre ce cours' %}
+    {% set is_connected = True %}
+
+    <h1>Bienvenue sur la page de {{title}}</h1>
+    <p>En vrai c'est pas si difficile.</p>
+
+    {% if is_connected %}
+        <h2>Ce que nous devons voir : </h2>
+        <ul>
+            {% for task in to_see %}
+            <li>{{task}}</li>
+            {% endfor %}
+
+            
+            <!-- Formulaire à ajouter ci-dessous -->
+            
+            
+            {# Formulaire à ajouter ci-dessous
+                <form></form>
+                #}
+            </ul>
+            
+            <p>Tâches restantes : {{to_see|length}}</p>
+
+        <p>{{message_fin}}</p>
+    {% else %}
+        <p>Vous devez être connecté pour suivre ce cours</p>
+
+    {% endif %}
+{% endblock %}
